@@ -1,3 +1,4 @@
+
 var getJSON = function(url) {
   return new Promise(function(resolve, reject) {
     var xhr = new XMLHttpRequest();
@@ -15,10 +16,15 @@ var getJSON = function(url) {
   });
 };
 
-getJSON('https://cfe-meetup-api.herokuapp.com/find/groups?id=18356664').then(function(data) {
-    alert('Your Json result is:  ' + data.result); // debug
+getJSON('https://crossorigin.me/https://api.meetup.com/founderscoders/events?sig_id=183914168&sig=ea5496808a9860ea997d74b191fa0bfedbb36733').then(function(data) {
+    alert('Your Json result is:  ' + data); // debug
 
-    result.innerText = data.result; // display the result in an HTML element
+    result.innerText = data["0"].link; // display the result in an HTML element
 }, function(status) { // error detection....
   alert('Something went wrong.');
 });
+
+
+
+
+//https://cfe-meetup-api.herokuapp.com/find/groups?id=18356664
